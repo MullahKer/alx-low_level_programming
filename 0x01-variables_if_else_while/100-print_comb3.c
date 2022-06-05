@@ -1,41 +1,34 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success/completed)
- */
+* main - loop through variables a and b, printing digits
+*
+* Return: print to stdout all possible different combinations of twodigits
+**/
 int main(void)
-
 {
-int number_left;
-int number_right;
+int a = '0';
+int b;
 
-
-for (number_left = 48; number_right <= 78; number_left++)
+while (a <= '9')
 {
-for (number_right = number_left + 1 ; number_right <= 78; number_right++)
+b = a + 1;
+while (b <= '9')
 {
-
-putchar(number_left);
-putchar (number_right);
-
-
-if ((number_left == 56) && (number_right == 78))
+putchar(a);
+putchar(b);
+if (a == '8' && b == '9')
 {
-break;
-}
-
-putchar(',');
-putchar (' ');
-
-}
-
-}
-
 putchar('\n');
-
-
+}
+else
+{
+putchar(',');
+putchar(' ');
+}
+b++;
+}
+a++;
+}
 return (0);
-
-
 }
